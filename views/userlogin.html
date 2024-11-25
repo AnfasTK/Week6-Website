@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Login</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto:wght@700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #333;
+      background: url('/assets/images/hexagon-pattern.jpg') center/cover no-repeat;
+      color: #000000;
+      overflow: hidden;
+    }
+
+    .form-container {
+      text-align: center;
+      padding: 3rem 2rem;
+      background: rgba(0, 0, 0, 1.8); /* Dark overlay */
+      color: #FFFFFF;
+      border-radius: 10px;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+      transform: translateX(-100%);
+      animation: slideIn 1s forwards;
+    }
+
+    h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+    }
+
+    form input {
+      padding: 14px;
+      margin-bottom: 1rem;
+      width: 100%;
+      border: 2px solid #CCCCCC;
+      border-radius: 10px;
+      font-size: 1rem;
+      background-color: #000000;
+      color: #FFFFFF;
+    }
+
+    form button {
+      padding: 14px 35px;
+      font-size: 1.4rem;
+      font-weight: 700;
+      border-radius: 50px;
+      text-transform: uppercase;
+      color: #FFFFFF;
+      background-color: #000000;
+      border: 2px solid #CCCCCC;
+      transition: all 0.3s ease;
+    }
+
+    form button:hover {
+      color: #FFFFFF;
+      background-color: #000000;
+      border: 2px solid #CCCCCC;
+      transform: scale(1.1);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+      animation: buttonHover 0.4s ease-out;
+    }
+
+    @keyframes buttonHover {
+      0% {
+        transform: scale(1);
+      }
+      100% {
+        transform: scale(1.1);
+      }
+    }
+
+    @keyframes slideIn {
+      0% {
+        transform: translateX(-100%);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
+
+    .signup-link {
+      margin-top: 20px;
+      display: block;
+      font-size: 1.2rem;
+      color: #CCCCCC;
+      text-decoration: none;
+    }
+
+    .signup-link:hover {
+      color: #FFFFFF;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>User Login</h2>
+    <form action="/login" method="post">
+      <input type="text" name="email" placeholder="Email Address" required>
+      <input type="password" name="password" placeholder="Password" required>
+      <p style="color: red;padding-bottom: 10px;">{{.}}</p>
+      <button name="submit" value="Send" type="submit">Login</button>
+    </form>
+    <a href="/user/signup" class="signup-link">Don't have an account? Sign Up</a>
+    <a href="/" class="signup-link">Home Page</a>
+  </div>
+</body>
+</html>

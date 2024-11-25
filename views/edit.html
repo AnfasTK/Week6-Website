@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit User Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            height: 100vh;
+            background-color: #000000; /* Dark background */
+            color: #FFFFFF;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .container {
+            width: 100%;
+            max-width: 400px;
+            padding: 2rem;
+            background: rgba(0, 0, 0, 0.8); /* Dark overlay */
+            border-radius: 10px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+            border: 2px solid #CCCCCC; /* Single border around both heading and form */
+        }
+        h2 {
+            text-align: center;
+            color: #FFFFFF;
+            padding: 10px 20px;
+            margin-bottom: 20px; /* Add margin for spacing */
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #CCCCCC;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            border: 2px solid #CCCCCC;
+            background-color: #333;
+            color: #FFFFFF;
+        }
+        input[type="submit"],
+        input[type="button"] {
+            width: 48%;
+            background-color: #000000;
+            color: white;
+            cursor: pointer;
+            border: 2px solid #CCCCCC;
+            padding: 12px 0; /* Set consistent padding for buttons */
+        }
+        input[type="submit"]:hover,
+        input[type="button"]:hover {
+            background-color: #CCCCCC;
+            color: #000000;
+            border: 2px solid #000000;
+        }
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+        }
+        button {
+            width: 190px;
+            padding: 12px 0; /* Match padding with the submit button */
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            background-color: #d0280b;
+            color: white;
+            cursor: pointer;
+            border: 2px solid #CCCCCC;
+        }
+        button:hover {
+            background-color: #9a0808;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Edit User Details</h2>
+        <form action="/admin/edit-user/{{.}}" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="username" placeholder="Enter your name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+            <!-- You can add more fields for other user details here -->
+
+            <div class="button-container">
+                <input type="submit" value="Save">
+                <a href="/adminpannel"><button type="button">Close</button></a>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>
